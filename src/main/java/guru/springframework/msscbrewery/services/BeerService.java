@@ -4,6 +4,6 @@ import guru.springframework.msscbrewery.web.model.BeerDto;
 
 import java.util.UUID;
 
-public interface BeerSerivce {
+public interface BeerService {
     BeerDto getBeerById(UUID beerID);
 }

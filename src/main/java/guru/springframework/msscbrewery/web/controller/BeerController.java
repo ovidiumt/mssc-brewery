@@ -1,6 +1,6 @@
 package guru.springframework.msscbrewery.web.controller;
 
-import guru.springframework.msscbrewery.services.BeerSerivce;
+import guru.springframework.msscbrewery.services.BeerService;
 import guru.springframework.msscbrewery.web.model.BeerDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,15 +15,15 @@ import java.util.UUID;
 @RestController
 public class BeerController {
 
-    private final BeerSerivce beerSerivce;
+    private final BeerService beerService;
 
-    public BeerController(BeerSerivce beerSerivce) {
-        this.beerSerivce = beerSerivce;
+    public BeerController(BeerService beerService) {
+        this.beerService = beerService;
     }
 
-    @GetMapping({"beerId"})
+    @GetMapping({"/{beerId}"})
     public ResponseEntity<BeerDto> getBeer(@PathVariable("beerId") UUID beerID){
 
-        return new ResponseEntity<>(beerSerivce.getBeerById(beerID), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getBeerById(beerID), HttpStatus.OK);
     }
 }
