@@ -32,9 +32,9 @@ public class BeerController {
 
         HttpHeaders headers = new HttpHeaders();
         //todo add hostname to url
-        headers.add("Location","/api/v1/beer" + savedDto.getId().toString());
+        headers.add("Location","/api/v1/beer/" + savedDto.getId().toString());
 
-        return new ResponseEntity(headers, HttpStatus.OK);
+        return new ResponseEntity(headers, HttpStatus.CREATED);
     }
 
     @PutMapping({"/{beerId"})
