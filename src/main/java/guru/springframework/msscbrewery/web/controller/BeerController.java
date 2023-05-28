@@ -37,7 +37,7 @@ public class BeerController {
         return new ResponseEntity(headers, HttpStatus.OK);
     }
 
-    @PutMapping({"/{beerId"})
+    @PutMapping({"/{beerId}"})
     public ResponseEntity handleUpdate(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
 
         beerService.updateBeer(beerId, beerDto);
@@ -45,7 +45,7 @@ public class BeerController {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping({"/{beerId"})
+    @DeleteMapping({"/{beerId}"})
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBeer(@PathVariable("beerId") UUID beerId){
 
