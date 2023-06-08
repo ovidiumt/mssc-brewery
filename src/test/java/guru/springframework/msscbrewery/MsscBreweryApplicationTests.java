@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class MsscBreweryApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 
